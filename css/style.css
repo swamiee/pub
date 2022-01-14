@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+*{margin:0; padding:0;}
+li{list-style:none;}
+
+a{display:block; 
+    text-decoration:none;
+     color:inherit;}
+
+img{display: block;
+    border: 0;}
+
+.cf::after{content: ""; 
+    clear: both;
+    display: block;}
+
+/* 크기잡기 */
+#wrap{width: 1200px; height: 700px;  margin: 0 auto;}
+header{height: 100px; }
+#slide{height:300px; }
+#content{height:200px ; }
+footer{ height: 100px;}
+.logo{
+     width: 200px; padding: 30px 0; float: left;
+}
+nav{ 
+    width: 1000px;
+    height: 100px;
+    float: left;
+    
+}
+.sub{ display: none;}
+/* .gnb:hover .sub{display: block;} */
+.gnb a{
+    width: 150px;
+    line-height: 40px;
+    text-align: center;
+    background-color:rgb(220, 242, 255) ;
+}
+.gnb{
+    width: 600px;
+    position: relative;
+    top:30px;
+    left:380px;
+    /* z-index: 10;슬라이드가 네비보다 높을때 */
+}
+
+.gnb>li{float: left;}
+.gnb li:hover>a {background-color:lightsteelblue ;}
+/* slide */
+#slide{
+    overflow: hidden;
+    
+}
+#slide ul{
+    animation: slide 9s infinite;
+}
+@keyframes slide {
+    0%{ margin-top:0px; }
+    33%{ margin-top:-300px; }
+    66%{ margin-top:-600px; }
+    100%{ margin-top:-900px;}
+}
+/* content */
+
+section{
+    width: 380px;
+    height: 180px;
+    padding: 10px;
+    float: left;
+}
+.tap a{
+    width: 100px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #ffe4d2;
+}
+.tap a:hover{ 
+    background-color:lavender;
+}
+.tap>li { float: left;}
+.notice a{ 
+    line-height: 35px; 
+    background-color: #ffe4d2;
+    /* 한줄로 나와  */
+    white-space: nowrap;
+    overflow: hidden;
+    /* 텍스트 넘치면 ...로 축약해 */
+    text-overflow: ellipsis;
+    padding: 0 10px;
+}
+.notice a:hover{ 
+    background-color:lavender;}
+
+.gallery{
+    background-color:#ffe4d2;
+    display: none;
+}
+.gallery li{
+    float: left;
+    padding: 20px 0px 20px 20px;
+     }
+.gallery a:hover {
+    opacity: .6;
+}
+/* popup 팝업창*/
+#popup{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+    position: absolute;
+    top: 0; left: 0;
+    display: none;
+}
+.popup_body{
+        width: 600px;
+        height: 400px;
+        background-color: #ffff;
+        border: 3px #ccd solid;
+        border-radius: 10px;
+        position: absolute;
+        top:calc( 50% - 200px );
+        left:calc( 50% - 300px );
+        text-align: center;
+    }
+    
+.popup_body h3{
+    line-height: 80px;
+    font-size: 25px;
+}
+.popup_body p{
+    height: 260px;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.close{ 
+    width: 80px;
+    line-height: 40px;
+}
