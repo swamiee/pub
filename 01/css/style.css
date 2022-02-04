@@ -1,140 +1,252 @@
-@charset "UTF-8";
+@charset "utf-8";
 
 *{margin:0; padding:0;}
 li{list-style:none;}
 
 a{display:block; 
     text-decoration:none;
-     color:inherit;}
+     color: inherit;}
 
-img{display: block;
-    border: 0;}
+img{ display: block;
+    border:0;}
 
-.cf::after{content: ""; 
+.cf::after{
+    content:"";
+    display: block;
     clear: both;
-    display: block;}
+}
 
-/* 크기잡기 */
-#wrap{width: 1200px; height: 700px;  margin: 0 auto;}
-header{height: 100px; }
-#slide{height:300px; }
-#content{height:200px ; }
-footer{ height: 100px;}
-.logo{
-     width: 200px; padding: 30px 0; float: left;
-}
-nav{ 
-    width: 1000px;
+#wrap{width: 1200px; height: 700px; margin: 0 auto;
+    background-color: ivory;}
+header{height:100px;
+    background-color: #fff;}
+#slide{ height: 300px;
+    background-color: #ffff;}
+#content{ height: 200px;
+    background-color: ivory;}
+footer{height: 100px;
+    background-color: lightsteelblue;}
+
+.logo{width:200px; padding: 30px 0;
+    float: left; }
+
+nav{ width: 1000px;
     height: 100px;
-    float: left;
-    
-}
-.sub{ display: none;}
-/* .gnb:hover .sub{display: block;} */
-.gnb a{
-    width: 150px;
+    float: left ;}
+
+.sub { display: none; }
+
+.gnb a{ width: 150px;
     line-height: 40px;
-    text-align: center;
-    background-color:rgb(220, 242, 255) ;
-}
-.gnb{
-    width: 600px;
+    text-align: center ;
+    background-color: lavender;}
+
+.gnb{ width: 600px;
     position: relative;
-    top:30px;
-    left:380px;
-    /* z-index: 10;슬라이드가 네비보다 높을때 */
-}
+    top: 30px;
+    left: 380px; }
 
 .gnb>li{float: left;}
-.gnb li:hover>a {background-color:lightsteelblue ;}
-/* slide */
+
+.gnb:hover .sub{display: block;}
+
 #slide{
     overflow: hidden;
-    
 }
+
 #slide ul{
     animation: slide 9s infinite;
 }
-@keyframes slide {
+
+@keyframes slide{
     0%{ margin-top:0px; }
     33%{ margin-top:-300px; }
     66%{ margin-top:-600px; }
     100%{ margin-top:-900px;}
 }
-/* content */
+/* #content */
 
-section{
+#content section{
     width: 380px;
     height: 180px;
     padding: 10px;
     float: left;
 }
-.tap a{
-    width: 100px;
+#content .tab a{
+    width: 100px;   
     line-height: 40px;
     text-align: center;
-    background-color: #ffe4d2;
-}
-.tap a:hover{ 
     background-color:lavender;
+    transition: .3s;
 }
-.tap>li { float: left;}
-.notice a{ 
-    line-height: 35px; 
-    background-color: #ffe4d2;
-    /* 한줄로 나와  */
-    white-space: nowrap;
-    overflow: hidden;
-    /* 텍스트 넘치면 ...로 축약해 */
-    text-overflow: ellipsis;
-    padding: 0 10px;
+#content .tab a.on{
+    background-color:gray;
 }
-.notice a:hover{ 
-    background-color:lavender;}
 
-.gallery{
-    background-color:#ffe4d2;
-    display: none;
-}
-.gallery li{
+/* #content .tab a:hover{ 
+    background-color:#fff;
+} */
+
+#content .tab li{
     float: left;
-    padding: 20px 0px 20px 20px;
-     }
-.gallery a:hover {
-    opacity: .6;
 }
-/* popup 팝업창*/
+
+#content .notice a{
+    padding: 0px 10px;
+    line-height: 35px;
+    background-color: lavender;
+    height:35px;
+    transition: .3s;
+    
+}
+#content .notice {
+    background-color: lavender;
+}
+
+#content .notice span{
+    display:block;
+    float: left;
+}
+
+#content .notice span:nth-child(1){
+    width: 240px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#content .notice span:nth-child(2){
+  width:120px;
+  text-align:right ;
+}
+
+
+#content .notice a:hover{ 
+    background-color:#fff;
+}
+
+/* 갤러리 */
+
+#content .gallery li{
+    float: left;
+    padding: 20px 0 20px 20px;
+}
+
+#content .gallery img{
+    width: 100px;
+
+}
+
+#content .gallery {
+    background-color: lavender;
+     display: none;
+}
+
+#content .gallery a:hover{
+     opacity:.5; transition: .5s;
+}
+
+
 #popup{
-    width: 100%;
+    width:100%;
     height: 100vh;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0, 0, 0 ,.5);
+    /* 배경색 명도 조절 ▲ */
     position: absolute;
-    top: 0; left: 0;
+    top:0;
+    left: 0;
     display: none;
 }
+
 .popup_body{
-        width: 600px;
-        height: 400px;
-        background-color: #ffff;
-        border: 3px #ccd solid;
-        border-radius: 10px;
-        position: absolute;
-        top:calc( 50% - 200px );
-        left:calc( 50% - 300px );
-        text-align: center;
-    }
-    
-.popup_body h3{
-    line-height: 80px;
-    font-size: 25px;
+    width: 600px;
+    height: 400px;
+    background-color: #fff ;
+    border: 3px #fff solid;
+    /*▲ 선모양 잡기=solid */
+    border-radius: 10px;  
+    /*▲ 모서리 둥글게 */
+    position: absolute;
+    top:calc(50% - 200px);
+    left:calc( 50% - 300px);
+    text-align: center;
+
 }
+
+.popup_body h3{
+    line-height: 100px;
+    
+}
+
 .popup_body p{
-    height: 260px;
+    height: 200px;
     padding: 0 20px;
     text-align: left;
 }
+.close{
+    width: 60px;
+    line-height: 30px;
+}
 
-.close{ 
-    width: 80px;
-    line-height: 40px;
+.banner{
+    width: 380px;
+    height: 180px;
+    background:url('../img/credit-card.png') no-repeat;
+    background-size: 60%;
+    background-position: center center;
+    transition: .3;
+}
+
+.banner:hover{
+    opacity: .6;
+}
+
+.banner .text{
+    position: relative;
+    top:110px;
+    left: 80px;
+    font-size: 12px;
+    color: #ffff;
+}
+#content .shortcut li{
+    float: left;
+    padding: 30px 0 30px 20px;
+}
+
+#content .shortcut img{
+    width: 100px;
+
+}
+
+#content .shortcut h3{
+    text-align: center;
+    font-size: 10px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.shortcut a:hover{
+    opacity: .6;
+}
+
+/* 푸터 */
+
+.copyright{
+    width: 800px;
+    float: left;
+    line-height:20px 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sns{
+    width: 200px;
+    height: 100px;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+}
+.sns select{ 
+    width: 120px;
+    height: 30px;
+    
 }
