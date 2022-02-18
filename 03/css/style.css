@@ -1,0 +1,306 @@
+@charset "utf-8";
+*{margin: 0; padding: 0}
+li{ list-style: none;}
+
+a{ display: block; text-decoration: none;
+    color: inherit;}
+img{ display: block; border: 0;}
+
+.cf::after{
+    content: ""; display: block;
+    clear: both;
+}
+
+/* 크기 */
+
+#wrap{
+    width:1200px ;
+    height:700px ;
+    margin: 0 auto;
+
+}
+header{
+    height: 100px;
+
+}
+
+#slide{ 
+    height: 300px;
+ 
+}
+
+#content{
+    height: 200px;
+}
+footer{
+    height: 100px;
+
+
+}
+
+/* 헤더 */
+
+.logo {
+    padding: 25px 0 ;
+    float: left;
+}
+.logo img{
+    width: 200px;
+    height: 50px;
+}
+
+nav{
+    width: 1000px;
+    height: 100px;
+    float: left;
+
+    position: relative;
+}
+.gnb { 
+    position: absolute;
+    top:30px;
+    left: 380px;
+    z-index: 1111;
+    width: 1000px;
+   
+
+}
+
+.gnb>li{
+    float: left;
+    background-color: #fff;
+    border: solid 1px #ccc;
+
+}
+.gnb a{ 
+    width: 150px;
+    line-height: 30px;
+    text-align: center;
+}
+.gnb li:hover>a{
+    background-color: rgb(36, 36, 36);
+}
+
+.sub{
+    display: none;
+    font-size: 12px;
+}
+
+/* 슬라이드 */
+
+#slide{
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+
+}
+
+#slide ul{
+    
+    animation: slide 9s infinite;
+}
+
+#slide img{
+    width: 1200px;
+    height: 300px;   
+}
+
+@keyframes slide{
+    0%{margin-top:0%; opacity: 0;}
+    3%{margin-top:0%; opacity: 1;}
+    30%{margin-top:0%; opacity: 1;}
+    33%{margin-top:0%; opacity: 0;}
+    33.1%{margin-top:-300px;opacity: 0;}
+    36%{margin-top:-300px;opacity: 1;}
+    63%{margin-top:-300px;opacity: 1;}
+    66%{margin-top:-300px;opacity: 0;}
+    66.1%{margin-top:-600px;opacity: 0;}
+    69%{margin-top:-600px;opacity: 1;}
+    97%{margin-top:-600px;opacity: 1;}
+    100%{margin-top:-600px;opacity: 0;}
+}
+
+/* 콘텐트 설정 */
+
+#content section{
+    width: 380px;
+    height: 180px;
+    padding: 10px;
+    float: left;
+}
+
+.tab a {
+    width: 100px;
+    line-height: 30px;
+    text-align: center; 
+    transition: 0.3s;
+}
+.tab li{
+    float: left;
+    
+}
+
+.tab a:hover {
+    background-color: #fff;
+}
+.notice a{
+    width: 360px;
+    height: 25px;
+    padding: 0 10px;
+    line-height: 25px;
+    ;
+    transition: 0.3s;
+
+}
+.notice .subject{
+    width: 260px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis ;
+    white-space: nowrap;
+    transition: .3s;
+}
+.notice a:hover {
+    background-color: #fff;
+}
+.date{
+    width:100px;
+    float: right;
+}
+.gallery{
+    ;
+    display: none;
+}
+
+.gallery img{
+    width: 100px;
+
+}
+.gallery li{
+    float: left;
+    padding: 25px 0 25px 20px;
+}
+
+.gallery:hover{
+    opacity: .5;
+}
+
+
+/* 배너 */
+section:nth-child(2) a{
+    margin: 0 auto;
+    width: 200px;
+}
+section:nth-child(2) a:hover{
+    opacity: .6;
+}
+section:nth-child(2) p{
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+section:nth-child(2) img{
+    width: 150px;
+    padding: 0 25px ;
+    height: 150px;
+}
+
+.shortcut img{width:100px}
+.shortcut li{
+    padding: 25px 0 25px 20px;
+    float: left;
+}
+.shortcut h3{
+    text-align: center;
+}
+.shortcut a:hover{
+    opacity: .6;
+}
+
+/* 푸터 */
+.f_right{
+    width: 1000px;
+    height: 100px;
+    float: left;
+}
+
+.b_menu{ 
+    text-align: center;
+}
+.b_menu a {
+    display: inline;
+    line-height: 40px;
+}
+.b_menu a:hover{
+    text-decoration: underline;
+}
+
+.copyright{
+    text-align: center;
+}
+
+/* 팝업 */
+#popup{
+    width: 100%;
+    height: 100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 111111111;
+    background-color: rgba(0,0,0,.9);
+    display: none;
+
+}
+
+.popup_body{
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    border: solid 10px #111;
+    border-radius: 5px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.popup_body h3{
+    line-height: 6 0px;
+}
+
+.popup_body p{
+    padding: 10px 20px;
+    text-align: left;
+}
+
+/* 엑스박스 */
+
+.close{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top:10px;
+    left: 550px;
+    cursor: pointer;
+    
+}
+
+.bar{
+    width: 32px;
+    height: 2px;
+    background-color: #111;
+    position: absolute;
+    top:50%; left: 50%;
+
+}
+.bar:nth-child(1){
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.bar:nth-child(2){
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.close:hover .bar{
+    background-color: #333;
+}
