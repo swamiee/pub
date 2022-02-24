@@ -40,8 +40,11 @@ img{ display: block; border: 0;}
 
 /* 헤더 */
 
+.logo{
+    padding: 10px;
+}
 .logo img{
-    width: 200px;
+    width: 180px;
 }
 /* nav{ width: 200px; height: 550px;
 } 생략가능 */
@@ -81,4 +84,172 @@ img{ display: block; border: 0;}
 }
 .sub>li:hover>a{
     background-color: beige;
+}
+
+/* 슬라이드 */
+
+#slide{
+    overflow: hidden;
+}
+
+#slide ul{
+    width: 3200px;
+    animation: slide 9s infinite;
+}
+#slide li{
+    float: left;
+}
+
+@keyframes slide{
+    0%{ margin-left:0;}
+    33%{ margin-left: -800px;}
+    66%{ margin-left: -1600px;}
+    100%{ margin-left: -2400px;}
+}
+
+/* 내용 */
+
+section{
+    width: 250px;
+    height: 180px;
+    padding: 10px 8px;
+    float: left;
+}
+.notice a{
+    width: 250px;
+    height: 30px;
+    transition: .3s;
+}
+.title{
+    height: 29px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+}
+
+.subject{
+    width: 170px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    padding: 6px;
+}
+.date{
+    width: 60px;
+    font-size: 11px;
+    float: left;
+    text-align: right;
+    padding: 6px 4px;
+    line-height: 20px;
+}
+.notice li:hover a{
+    background-color: aliceblue;
+}
+
+/* 갤러리 */
+
+.gallery img{
+    width: 70px;
+    height: 70px;
+}
+.gallery li { 
+    float: left;
+}
+
+.gallery a {
+    padding: 40px 6.5px;
+    transition: .3s;
+}
+
+.gallery li:hover>a{
+    opacity: .7;
+}
+
+
+/* 바로가기 */
+
+.baro { text-align: center;}
+.baro img{
+    width: 70px;
+    height: 70px;
+}
+.baro li{
+    float: left;
+}
+.baro a {
+    padding: 40px 6.5px;
+    transition: .3s;
+}
+span {
+    
+    font-size: 14px;
+}
+.baro li:hover>a{
+    opacity: .6;
+}
+
+
+/* 푸터 */
+.footer_logo{
+    padding: 25px;
+    float: left;
+}
+.footer_logo img{
+    width: 100px;
+}
+.copyright{
+    width:530px;
+    float: left;
+    font-size: 13px;
+    padding: 23.6px 10px ;
+}
+
+select{
+    margin: 20px 0;
+}
+
+/* 팝업 */
+
+#popup{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate( -50%, -50%);
+    background-color:rgba(1, 1,1, .8);
+    z-index: 1;
+    display: none;
+}
+
+.popup_body{
+    width: 600px;
+    height: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50% , -50%);
+    background-color: #fff;
+    text-align: center;
+    padding: 20px
+}
+
+.popup_body h3{
+    line-height: 50px;
+}
+
+.popup_body h4{
+    margin-bottom: 30px;
+}
+.popup_body p{
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px
+}
+
+.close{
+    margin-top: 30px;
+    width: 60px;
+    height: 30px;
 }

@@ -6,3 +6,14 @@ $(".gnb li").hover(
         $(this).children(".sub").stop().fadeOut();
     }
 );
+
+$(".open").click(
+    function(){
+        $("#popup").show();
+    }
+);
+$(".close").click(
+    function(){
+        $("#popup").hide();
+    }
+);
