@@ -1,0 +1,10 @@
+$(".gnb").hover(
+    function(){
+        $(".sub").stop().slideDown();
+        $(".nav_bg").stop().slideDown();
+    },
+    function(){
+        $(".sub").stop().slideUp();
+        $(".nav_bg").stop().slideUp();
+    },
+);
