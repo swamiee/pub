@@ -71,7 +71,7 @@ nav{
 .gnb a{
     width: 150px;
     line-height: 40px;
-    text-align: center;
+    text-align: center; 
     background-color: #333;
 
 }
